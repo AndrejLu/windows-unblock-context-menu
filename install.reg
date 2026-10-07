@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\shell\UnblockFiles]
+@="Unblock files in this folder"
+"Icon"="powershell.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\UnblockFiles\command]
+@="powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"Get-ChildItem -LiteralPath '%1' -Recurse -File -ErrorAction SilentlyContinue | Unblock-File\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\UnblockFiles]
+@="Unblock files in this folder"
+"Icon"="powershell.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\UnblockFiles\command]
+@="powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"Get-ChildItem -LiteralPath '%V' -Recurse -File -ErrorAction SilentlyContinue | Unblock-File\""
